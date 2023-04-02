@@ -1,0 +1,66 @@
+<!-- <input type="text" [(ngModel)]="searchTerm" placeholder="Search by Username" (keyup)="search()"> -->
+<!-- <input type="text" [(ngModel)]="searchText" placeholder="Search..."> -->
+<div class="">
+  <div class="row" style="width: 80%;padding-right:220px; margin: auto;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>UserName</th>
+          <th>Email</th>
+          <!-- <th (click)="sort1('phone')">Phone</th> -->
+          <th style="vertical-align: middle;">
+            Phone
+            <mat-icon style="font-size: 16px; line-height: 10px;cursor: pointer;vertical-align: middle;
+             padding-top:10%;" (click)="sort1('phone')">arrow_upward</mat-icon>
+            <mat-icon style="font-size: 16px; line-height: 10px;cursor: pointer; vertical-align: middle;
+              padding-top:10%;padding-right:1px;" (click)="sort2('phone')">arrow_downward</mat-icon>
+          </th>
+
+          <th>Gender</th>
+          <th>DOB</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="grid">
+        <tr *ngFor="let formsValue of formValueArray ; let i = index">
+          <ng-container *ngIf="!isEditing[i];  *ngIf=" searchText.length>= 3" else editForm">
+
+            <td>{{ formsValue.UserName }}</td>
+            <td>{{ formsValue.Email }}</td>
+            <td>{{ formsValue.phone }}</td>
+            <td>{{ formsValue.gender }}</td>
+            <td>{{ formsValue.DOB }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="Edit(i)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteRow(i)">Delete</button>
+            </td>
+
+          </ng-container>
+
+          <ng-template #editForm>
+            <td>
+              <input type="text" [(ngModel)]="formValueArray[i].UserName">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="formValueArray[i].Email">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="formValueArray[i].phone">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="formValueArray[i].gender">
+            </td>
+            <td>
+              <input type="date" [(ngModel)]="formValueArray[i].DOB">
+            </td>
+            <td>
+              <button class="btn btn-success" (click)="saveEdit(i)">update</button>
+              <button class="btn btn-warning" (click)="Edit(i)">Cancel</button>
+            </td>
+          </ng-template>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

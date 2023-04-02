@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    flex-direction:column;
+    align-items:flex-start;
+    border-radius: 15px;
+    gap: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  .bgcolor{
+    background-color: rgba(139, 139, 202, 0.37);
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+/*   
+<div class="row" style="width:30% ;padding-top:2%;"    >
+<div style=" margin: 80px" class="bgcolor"> */

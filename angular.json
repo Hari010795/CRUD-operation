@@ -87,12 +87,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js"
+
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5209e60e-4c83-4d08-8bc9-137b2bac87d9"
   }
 }
